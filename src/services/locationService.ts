@@ -28,10 +28,11 @@ export class LocationService {
                 (position) => {
                     // save the geolocation coordinates in two variables
                     this.location = position.coords;
+                    console.log('Location:', this.location);
                 },
                 // if there was an error getting the users location
                 (error) => {
-                    console.error('Error getting user location:', error);
+                    alert('Error getting user location:' + JSON.stringify(error));
                 }
             );
         }
